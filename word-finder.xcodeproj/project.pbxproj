@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF2D3A2117A7593000FE519A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2D3A2017A7593000FE519A /* main.cpp */; };
 		BF2D3A2317A7593000FE519A /* word_finder.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF2D3A2217A7593000FE519A /* word_finder.1 */; };
+		BFCDFAD417A75C6200F8B818 /* libaspell.15.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCDFAD317A75C6200F8B818 /* libaspell.15.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		BF2D3A1D17A7593000FE519A /* word-finder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "word-finder"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2D3A2017A7593000FE519A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BF2D3A2217A7593000FE519A /* word_finder.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = word_finder.1; sourceTree = "<group>"; };
+		BFCDFAD317A75C6200F8B818 /* libaspell.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libaspell.15.dylib; path = ../../../../usr/local/Cellar/aspell/0.60.6.1/lib/libaspell.15.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFCDFAD417A75C6200F8B818 /* libaspell.15.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 		BF2D3A1417A7593000FE519A = {
 			isa = PBXGroup;
 			children = (
+				BFCDFAD317A75C6200F8B818 /* libaspell.15.dylib */,
 				BF2D3A1F17A7593000FE519A /* word-finder */,
 				BF2D3A1E17A7593000FE519A /* Products */,
 			);
@@ -128,7 +132,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -156,6 +160,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -166,7 +174,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -189,6 +197,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
@@ -197,6 +207,11 @@
 		BF2D3A2717A7593000FE519A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ADDITIONAL_SDKS[arch=*]" = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/aspell/0.60.6.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -204,6 +219,10 @@
 		BF2D3A2817A7593000FE519A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/aspell/0.60.6.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -227,6 +246,7 @@
 				BF2D3A2817A7593000FE519A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
