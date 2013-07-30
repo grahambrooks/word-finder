@@ -7,34 +7,21 @@
 //
 
 #include <iostream>
-#include <aspell.h>
 #include <vector>
 #include <map>
+
+#include "spell_checker.hpp"
+
 using namespace std;
 
 int main(int argc, const char * argv[])
 {
-    
-    AspellConfig * spell_config = new_aspell_config();
-    
-    AspellCanHaveError * possible_err = new_aspell_speller(spell_config);
-    
-    
-    if (aspell_error_number(possible_err) != 0)
-        puts(aspell_error_message(possible_err));
-    else {
-        auto spell_checker = to_aspell_speller(possible_err);
+    if (argc < 2) {
+        cout << "Usage word-finder <word>" << endl;
+    } else {
+        spell_checker checker;
         
-        auto word = "hello";
-        auto correct = aspell_speller_check(spell_checker, word, static_cast<int>(strlen(word)));
-        
-        if (correct == 0) {
-            cout << word << " miss-spelled" << endl;
-        } else {
-            cout << word << " spelled correctly" << endl;
-        }
-        
-        auto text = " xlirei";
+        auto text = argv[1];
         
         vector<char> y(text, text + strlen(text));
         
@@ -45,7 +32,9 @@ int main(int argc, const char * argv[])
         do {
             for (auto i : {3, 4, 5, 6}) {
                 auto j = y.begin();
+                
                 string word;
+                
                 while (i > 0) {
                     if (*j != ' ') {
                         word += *j;
@@ -55,13 +44,10 @@ int main(int argc, const char * argv[])
                 }
                 
                 if (found.count(word) == 0) {
-                    
-                    auto correct = aspell_speller_check(spell_checker, word.c_str(), static_cast<int>(word.length()));
-                    
-                    if (correct) {
+                    if (checker.is_correct(word)) {
                         real_words.insert(real_words.end(), word);
                         found[word] = word;
-                     }
+                    }
                 }
             }
         } while (next_permutation(y.begin(), y.end()));
@@ -70,10 +56,7 @@ int main(int argc, const char * argv[])
         
         for(auto g : real_words)
             cout << g << endl;
-        
-        delete_aspell_speller(spell_checker);
-        delete_aspell_config(spell_config);
     }
+    
     return 0;
 }
-
