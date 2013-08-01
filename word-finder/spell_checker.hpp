@@ -23,6 +23,20 @@ public:
         spell_config = new_aspell_config();
         
         AspellCanHaveError * possible_err = new_aspell_speller(spell_config);
+        auto rc = aspell_config_replace(spell_config, "size", "80");
+        cerr << "config returned " << rc << endl;
+//        switch (rc) {
+//            case PERROR_UNKNOWN_KEY:
+//                cerr << "Unknown key size" << endl;
+//                break;
+//            case PERROR_BAD_VALUE:
+//                cerr << "Invalid value" << endl;
+//                break;
+//            case PERROR_CANT_CHANGE_VALUE:
+//                cerr << "Cant change value size" << endl;
+//                break;
+//        }
+        
         
         
         if (aspell_error_number(possible_err) != 0)

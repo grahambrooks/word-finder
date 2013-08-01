@@ -35,6 +35,7 @@ int main(int argc, const char * argv[])
         auto text = argv[1];
         
         vector<char> y(text, text + strlen(text));
+        sort(y.begin(), y.end());
         
         map<string, string> found;
         
@@ -43,7 +44,7 @@ int main(int argc, const char * argv[])
         permute(y, [&](const string& w) {
             
             for (int i = 3; i <= w.size(); i++) {
-                for (int j = 0; j < w.size() - i; j++) {
+                for (int j = 0; j <= w.size() - i; j++) {
                     string to_check(&w.c_str()[j], i);
                     
                     if (found.count(to_check) == 0) {
@@ -55,11 +56,10 @@ int main(int argc, const char * argv[])
                 }
             }
         });
+        sort(real_words.begin(), real_words.end(), [](const string& a, const string& b) { return b.length() == a.length() ? a < b : b.length() > a.length();});
         
-        sort(real_words.begin(), real_words.end());
-        
-        for(auto g : real_words)
-            cout << g << endl;
+        for(auto w : real_words)
+            cout << w << endl;
     }
     
     return 0;
