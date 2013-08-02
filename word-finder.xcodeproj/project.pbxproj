@@ -27,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		420DBA6B17A808A20088B229 /* spell_checker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = spell_checker.hpp; sourceTree = "<group>"; };
+		BF07AF0E17AB3FCF003463E7 /* word_finder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = word_finder.hpp; sourceTree = "<group>"; };
 		BF2D3A1D17A7593000FE519A /* word-finder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "word-finder"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2D3A2017A7593000FE519A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BF2D3A2217A7593000FE519A /* word_finder.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = word_finder.1; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 				BF2D3A2017A7593000FE519A /* main.cpp */,
 				BF2D3A2217A7593000FE519A /* word_finder.1 */,
 				420DBA6B17A808A20088B229 /* spell_checker.hpp */,
+				BF07AF0E17AB3FCF003463E7 /* word_finder.hpp */,
 			);
 			path = "word-finder";
 			sourceTree = "<group>";
