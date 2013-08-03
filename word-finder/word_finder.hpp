@@ -32,7 +32,7 @@ public:
     vector<string> find() {
         spell_checker checker;
         
-        word_accumulator accumulator;
+        accumulator<string> accumulator;
         
         permute(sorted_vector_of(seed), [&](const string& w) {
             
@@ -40,16 +40,12 @@ public:
                 for (int j = 0; j <= w.size() - i; j++) {
                     string to_check(&w.c_str()[j], i);
                     
-                    if (accumulator.seen(to_check)) {
-                        if (checker.is_correct(to_check)) {
-                            accumulator.add(to_check);
-                        }
-                    }
+                    accumulator.append_if(to_check, [&](const string& t) { return checker.is_correct(t);} );
                 }
             }
         });
         
-        return accumulator.sorted([](const string& a, const string& b) {
+        return accumulator.sort_by([](const string& a, const string& b) {
             return b.length() == a.length() ? a < b : b.length() > a.length();
         });
     }

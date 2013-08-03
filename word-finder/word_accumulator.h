@@ -9,24 +9,29 @@
 #pragma once
 
 
-class word_accumulator {
-    map<string, string> found;
+template<typename T>
+class accumulator {
+    map<T, T> found;
 public:
-    bool seen(const string& candidate) {
-        return found.count(candidate) == 0;
+    bool seen(const T& candidate) {
+        return found.count(candidate) != 0;
     }
     
-    void add(const string& word) {
-        found[word] = word;
+    void append_if(const T& word, function<bool (const T&)> predicate) {
+        if (!seen(word)) {
+            if (predicate(word)) {
+                found[word] = word;
+            }
+        }
     }
     
-    vector<string> sorted(function<bool (const string&, const string&)> comparator) {
-        vector<string> real_words;
+    vector<T> sort_by(function<bool (const T&, const T&)> comparator) {
+        vector<T> words;
         for (auto w : found) {
-            real_words.insert(real_words.begin(),w.first);
+            words.insert(words.begin(),w.first);
         }
         
-        sort(real_words.begin(), real_words.end(), comparator);
-        return real_words;
+        sort(words.begin(), words.end(), comparator);
+        return words;
     }
 };
