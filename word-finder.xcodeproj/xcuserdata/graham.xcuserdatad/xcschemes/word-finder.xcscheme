@@ -59,7 +59,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "mgsita"
+            argument = "rdseef"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

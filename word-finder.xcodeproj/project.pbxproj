@@ -32,6 +32,7 @@
 		BF2D3A2017A7593000FE519A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BF2D3A2217A7593000FE519A /* word_finder.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = word_finder.1; sourceTree = "<group>"; };
 		BFCDFAD317A75C6200F8B818 /* libaspell.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libaspell.15.dylib; path = ../../../../usr/local/Cellar/aspell/0.60.6.1/lib/libaspell.15.dylib; sourceTree = "<group>"; };
+		BFED66BF17AD97090091C294 /* word_accumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = word_accumulator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 				BF2D3A2217A7593000FE519A /* word_finder.1 */,
 				420DBA6B17A808A20088B229 /* spell_checker.hpp */,
 				BF07AF0E17AB3FCF003463E7 /* word_finder.hpp */,
+				BFED66BF17AD97090091C294 /* word_accumulator.h */,
 			);
 			path = "word-finder";
 			sourceTree = "<group>";
