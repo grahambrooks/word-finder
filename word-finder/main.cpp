@@ -6,26 +6,9 @@
 //  Copyright (c) 2013 GrahamBrooks. All rights reserved.
 //
 
-#include <iostream>
-#include <vector>
-
-#include "word_finder.hpp"
-
-using namespace std;
-
+#include "app.hpp"
 
 int main(int argc, const char *argv[]) {
-    if (argc < 2) {
-        cout << "Usage word-finder <word>" << endl;
-    } else {
-
-        word_finder finder(argv[1]);
-
-        auto real_words = finder.find();
-
-        for (auto w : real_words)
-            cout << w << endl;
-    }
-
-    return 0;
+    app a;
+    return a.run(argc, argv);
 }
