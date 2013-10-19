@@ -9,7 +9,7 @@ characters.
 <pre>
 word-finder rdseef
 </pre>
-produces 
+produces: 
 
 <pre>
 def
