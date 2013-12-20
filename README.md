@@ -43,3 +43,7 @@ reeds
 reefs
 defers
 </pre>
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/grahambrooks/word-finder/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
