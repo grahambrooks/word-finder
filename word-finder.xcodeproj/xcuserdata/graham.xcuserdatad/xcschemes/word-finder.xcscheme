@@ -59,7 +59,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "yrpipl"
+            argument = "lcatua"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

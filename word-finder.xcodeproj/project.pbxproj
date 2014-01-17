@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF2D3A2117A7593000FE519A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2D3A2017A7593000FE519A /* main.cpp */; };
 		BF2D3A2317A7593000FE519A /* word_finder.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF2D3A2217A7593000FE519A /* word_finder.1 */; };
-		BFCDFAD417A75C6200F8B818 /* libaspell.15.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCDFAD317A75C6200F8B818 /* libaspell.15.dylib */; };
+		BF5B40CA17BAF29C0006642F /* libaspell.15.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCDFAD317A75C6200F8B818 /* libaspell.15.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFCDFAD417A75C6200F8B818 /* libaspell.15.dylib in Frameworks */,
+				BF5B40CA17BAF29C0006642F /* libaspell.15.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

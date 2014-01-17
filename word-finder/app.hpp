@@ -17,15 +17,15 @@ public:
         if (argc < 2) {
             cout << "Usage word-finder <word>" << endl;
         } else {
-
+            
             word_finder finder(argv[1]);
-
+            
             auto real_words = finder.find();
-
+            
             for (auto w : real_words)
                 cout << w << endl;
         }
-
+        
         return 0;
     }
 };
