@@ -2,3 +2,5 @@ build/
 dist/
 *.dmg
 .idea/
+project.xcworkspace/
+xcuserdata/
